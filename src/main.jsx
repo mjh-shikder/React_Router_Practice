@@ -55,10 +55,10 @@ const router = createBrowserRouter([
         loader: ({params})=> fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`) ,
         Component: PostDetails,
       },
-      {
-        path: '*',
-        element: <h2>Not Foundddddd</h2>
-      }
+      // {
+      //   path: '*',
+      //   element: <h2>Not Foundddddd</h2>
+      // }
     ],
   },
   {
@@ -73,6 +73,12 @@ const router = createBrowserRouter([
     path: "app",
     Component: App, //element: <App></App>
   },
+  
+    {
+        path: '*',
+        element: <h2>Not Foundddddd</h2>
+      }
+  
 ]);
 
 createRoot(document.getElementById("root")).render(
