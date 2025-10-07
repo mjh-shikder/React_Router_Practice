@@ -1,9 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 const Post = ({ post }) => {
     
     const { id, title } = post; 
+    const navigate = useNavigate();
+    const handleNavigate = () => {
+        navigate('/laptops')
+    }
 
     return (
         <div className='border-1 border-b-blue-400 border-blue-500 rounded-xl mb-3.5 p-4'>
@@ -11,6 +15,7 @@ const Post = ({ post }) => {
             <Link to={`/posts/${id}`}>
             <button>Show Details</button>
             </Link>
+            <button onClick={handleNavigate}>Details of: {id }</button>
         </div>
     );
 };
